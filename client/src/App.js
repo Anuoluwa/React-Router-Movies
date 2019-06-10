@@ -22,10 +22,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <SavedList list={this.state.savedList} />
-        <MovieList />
-      </div>
+      <Router>
+         <div>
+          <SavedList list={this.state.savedList} />
+          <Route path="/" component={MovieList} />
+          <Route path="/movies/:id" component={Movie} />
+        </div>
+      </Router>
+     
     );
   }
 }
